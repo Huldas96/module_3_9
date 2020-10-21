@@ -22,28 +22,50 @@ const lastName = document.querySelector(".lastName");
 const email = document.querySelector(".email");
 const phoneNumber = document.querySelector(".phoneNumber");
 const birthDate = document.querySelector(".birthDate");
+const checkBox = document.querySelector(".check-box");
+const userName = document.querySelector(".userName");
+const password = document.querySelector(".password");
+const gender = document.querySelector(".gender");
+
+// ERROR
+const error = document.querySelectorAll(".error");
+
+// ERROR FUNCTION
+const errorDisplay = function(firstInput, secondInput, firstError, secondError) {
+    firstInput.addEventListener("change", function(){
+        firstError.classList.remove("active");
+    });
+    secondInput.addEventListener("change", function(){
+        secondError.classList.remove("active");
+    });
+    if(!firstInput.value) {
+        firstError.classList.add("active");
+        if(!secondInput.value) {
+            secondError.classList.add("active");
+            return "error"
+        }
+        return "error"
+    }
+    if(!secondInput.value) {
+        secondError.classList.add("active");
+        return "error"
+    }
+}
 
 // FIRST NEXT BUTTON SLIDE RIGHT
 nextBtnFirst.addEventListener("click", function(){
-    console.log(slidePage.style.marginLeft);
-/*     if(!firstName.value) return
-    if(!lastName.value) return */
-    slidePage.style.transform = "translateX(0rem)";
-/*     progressBullet[current - 1].classList.add("active");
+    if (errorDisplay(firstName, lastName, error[0], error[1]) === "error") return
+    slidePage.style.transform = "translateX(calc(-1 * calc(100% / 5)))";
+    progressBullet[current - 1].classList.add("active");
     progressCheck[current - 1].classList.add("active");
     progressText[current - 1].classList.add("active");
-    current += 1; */
+    current += 1; 
 });
 
-/* // SECOND NEXT BUTTON SLIDE RIGHT
+// SECOND NEXT BUTTON SLIDE RIGHT
 nextBtnSec.addEventListener("click", function(){
- /*    if(email.value.search("@") === -1) {
-        email.setCustomValidity("Invalid Email")
-        return
-    } else {
-        email.setCustomValidity("")
-    }  
-    slidePage.style.marginLeft = "-50%";
+    if (errorDisplay(email, phoneNumber, error[2], error[3]) === "error") return
+    slidePage.style.transform = "translateX(calc(-2 * calc(100% / 5)))";
     progressBullet[current - 1].classList.add("active");
     progressCheck[current - 1].classList.add("active");
     progressText[current - 1].classList.add("active");
@@ -52,8 +74,9 @@ nextBtnSec.addEventListener("click", function(){
 
 // THIRD NEXT BUTTON SLIDE RIGHT
 nextBtnThird.addEventListener("click", function(){
-   /*  if(!birthDate.value) return 
-    slidePage.style.marginLeft = "-75%";
+    if (errorDisplay(birthDate, gender, error[4], error[5]) === "error") return
+    if(!birthDate.value) return 
+    slidePage.style.transform = "translateX(calc(-3 * calc(100% / 5)))";
     progressBullet[current - 1].classList.add("active");
     progressCheck[current - 1].classList.add("active");
     progressText[current - 1].classList.add("active");
@@ -61,7 +84,11 @@ nextBtnThird.addEventListener("click", function(){
 });
 
 //  SUBMIT BUTTON SLIDE RIGHT
-submitBtn.addEventListener("click", function(){
+submitBtn.addEventListener("click", function(e){
+    e.preventDefault()
+    if (errorDisplay(userName, password, error[6], error[7]) === "error") return
+    if(checkBox.checked === false) return
+    slidePage.style.transform = "translateX(calc(-4 * calc(100% / 5)))";
     progressBullet[current - 1].classList.add("active");
     progressCheck[current - 1].classList.add("active");
     progressText[current - 1].classList.add("active");
@@ -70,7 +97,7 @@ submitBtn.addEventListener("click", function(){
 
 // FIRST BACK BUTTON SLIDE LEFT
 backBtnSec.addEventListener("click", function(){
-    slidePage.style.marginLeft = "0%";
+    slidePage.style.transform = "translateX(0)";
     progressBullet[current - 2].classList.remove("active");
     progressCheck[current - 2].classList.remove("active");
     progressText[current - 2].classList.remove("active");
@@ -79,7 +106,7 @@ backBtnSec.addEventListener("click", function(){
 
 // SECOND BACK BUTTON SLIDE LEFT
 backBtnThird.addEventListener("click", function(){
-    slidePage.style.marginLeft = "-25%";
+    slidePage.style.transform = "translateX(calc(-1 * calc(100% / 5)))";
     progressBullet[current - 2].classList.remove("active");
     progressCheck[current - 2].classList.remove("active");
     progressText[current - 2].classList.remove("active");
@@ -88,9 +115,9 @@ backBtnThird.addEventListener("click", function(){
 
 // THIRD BACK BUTTON SLIDE LEFT
 backBtnFourth.addEventListener("click", function(){
-    slidePage.style.marginLeft = "-50%";
+    slidePage.style.transform = "translateX(calc(-2 * calc(100% / 5)))";
     progressBullet[current - 2].classList.remove("active");
     progressCheck[current - 2].classList.remove("active");
     progressText[current - 2].classList.remove("active");
     current -= 1;
-}); */
+}); 

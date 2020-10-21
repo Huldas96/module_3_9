@@ -65,14 +65,20 @@
                     <div class="title">Basic Information</div>
                     <div class="field">
                         <div class="label">First Name</div>
-                        <input class="firstName" type="text" required>
+                        <div class="error">
+                            <img src="img/icon2.svg" alt="error">
+                        </div>
+                        <input class="firstName" name="firstName" type="text" required>
                     </div>
                     <div class="field">
                         <div class="label">Last Name</div>
-                        <input class="lastName" type="text" required>
+                        <div class="error">
+                            <img src="img/icon2.svg" alt="error">
+                        </div>
+                        <input class="lastName" name="lastName" type="text" required>
                     </div>
                     <div class="field nextBtn">
-                        <button>Next</button>
+                        <button type="button">Next</button>
                     </div>
                 </div>
 
@@ -81,15 +87,21 @@
                     <div class="title">Contact Information</div>
                     <div class="field">
                         <div class="label">Email Adress</div>
-                        <input class="email" type="text">
+                        <div class="error">
+                            <img src="img/icon2.svg" alt="error">
+                        </div>
+                        <input class="email" type="text" required>
                     </div>
                     <div class="field">
                         <div class="label">Phone Number</div>
+                        <div class="error">
+                            <img src="img/icon2.svg" alt="error">
+                        </div>
                         <input class="phoneNumber" type="number" required>
                     </div>
                     <div class="field btns">
-                        <button class="back-1 back">Back</button>
-                        <button class="next-1 next">Next</button>
+                        <button type="button" class="back-1 back">Back</button>
+                        <button type="button" class="next-1 next">Next</button>
                     </div>
                 </div>
 
@@ -98,11 +110,18 @@
                     <div class="title">Biological Information</div>
                     <div class="field">
                         <div class="label">Date Of Birth</div>
+                        <div class="error">
+                            <img src="img/icon2.svg" alt="error">
+                        </div>
                         <input class="birthDate" type="date" required>
                     </div>
                     <div class="field">
                         <div class="label">Gender</div>
-                        <select>
+                        <div class="error">
+                            <img src="img/icon2.svg" alt="error">
+                        </div>
+                        <select class="gender">
+                            <option></option>
                             <option>Female</option>
                             <option>Male</option>
                             <option>Non-binary</option>
@@ -110,8 +129,8 @@
                         </select>
                     </div>
                     <div class="field btns">
-                        <button class="back-2 back">Back</button>
-                        <button class="next-2 next">Next</button>
+                        <button type="button" class="back-2 back">Back</button>
+                        <button type="button" class="next-2 next">Next</button>
                     </div>
                 </div>
 
@@ -120,20 +139,31 @@
                     <div class="title">Login Details</div>
                     <div class="field">
                         <div class="label">Username</div>
-                        <input type="text">
+                        <div class="error">
+                            <img src="img/icon2.svg" alt="error">
+                        </div>
+                        <input type="text" class="userName" required>
                     </div>
                     <div class="field">
                         <div class="label">Password</div>
-                        <input type="password">
+                        <div class="error">
+                            <img src="img/icon2.svg" alt="error">
+                        </div>
+                        <input type="password" class="password" required>
                     </div>
                     <div class="field checking">
                         <div class=" tof">I Accept The Terms Of Service</div>
-                        <input class="check-box" type="checkbox">
+                        <input class="check-box" type="checkbox" required>
                     </div>
                     <div class="field btns">
-                        <button class="back-3 back">Back</button>
+                        <button type="button" class="back-3 back">Back</button>
                         <button class="submit">Submit</button>
                     </div>
+                </div>
+
+                <!-- here starts the fifth card // SUBMIT -->
+                <div class="page">
+                    <div class="title-2">Sign Up Successful!</div>
                 </div>
 
             </form>
