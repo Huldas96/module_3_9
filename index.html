@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Sign up!</title>
+</head>
+<body>
+    <div class="container">
+        <header>Sign Up</header>
+
+        <!-- here starts the progress bar -->
+        <div class="progress-bar">
+
+            <!--STEP ONE NAME-->
+            <div class="step">
+                <p>Name</p>
+                <div class="bullet">
+                    <span>1</span>
+                </div>
+                <div class="check">
+                    <img src="img/icon.svg" alt="check">
+                </div>
+            </div>
+            <!--STEP TWO CONTACT-->
+            <div class="step">
+                <p>Contact</p>
+                <div class="bullet">
+                    <span>2</span>
+                </div>
+                <div class="check">
+                    <img src="img/icon.svg" alt="check">
+                </div>
+            </div>
+            <!--STEP THREE BIO -->
+            <div class="step">
+                <p>Bio</p>
+                <div class="bullet">
+                    <span>3</span>
+                </div>
+                <div class="check">
+                    <img src="img/icon.svg" alt="check">
+                </div>
+            </div>
+            <!--STEP FOUR SUBMIT-->
+            <div class="step">
+                <p>Submit</p>
+                <div class="bullet">
+                    <span>4</span>
+                </div>
+                <div class="check">
+                    <img src="img/icon.svg" alt="check">
+                </div>
+            </div>
+        </div>
+        <!--here ends the progress bar -->
+
+        <div class="form-outer">
+            <form class="slidePage" action="#">
+
+                <!-- here starts the first card // BASIC INFORMATION -->
+                <div class="page">
+                    <div class="title">Basic Information</div>
+                    <div class="field">
+                        <div class="label">First Name</div>
+                        <input class="firstName" type="text" required>
+                    </div>
+                    <div class="field">
+                        <div class="label">Last Name</div>
+                        <input class="lastName" type="text" required>
+                    </div>
+                    <div class="field nextBtn">
+                        <button>Next</button>
+                    </div>
+                </div>
+
+                <!-- here starts the second card // CONTACT INFORMATION -->
+                <div class="page">
+                    <div class="title">Contact Information</div>
+                    <div class="field">
+                        <div class="label">Email Adress</div>
+                        <input class="email" type="text">
+                    </div>
+                    <div class="field">
+                        <div class="label">Phone Number</div>
+                        <input class="phoneNumber" type="number" required>
+                    </div>
+                    <div class="field btns">
+                        <button class="back-1 back">Back</button>
+                        <button class="next-1 next">Next</button>
+                    </div>
+                </div>
+
+                <!-- here starts the third card // BIOLOGICAL INFORMATION -->
+                <div class="page">
+                    <div class="title">Biological Information</div>
+                    <div class="field">
+                        <div class="label">Date Of Birth</div>
+                        <input class="birthDate" type="date" required>
+                    </div>
+                    <div class="field">
+                        <div class="label">Gender</div>
+                        <select>
+                            <option>Female</option>
+                            <option>Male</option>
+                            <option>Non-binary</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="field btns">
+                        <button class="back-2 back">Back</button>
+                        <button class="next-2 next">Next</button>
+                    </div>
+                </div>
+
+                <!-- here starts the fourth card // LOGIN DETAILS -->
+                <div class="page">
+                    <div class="title">Login Details</div>
+                    <div class="field">
+                        <div class="label">Username</div>
+                        <input type="text">
+                    </div>
+                    <div class="field">
+                        <div class="label">Password</div>
+                        <input type="password">
+                    </div>
+                    <div class="field checking">
+                        <div class=" tof">I Accept The Terms Of Service</div>
+                        <input class="check-box" type="checkbox">
+                    </div>
+                    <div class="field btns">
+                        <button class="back-3 back">Back</button>
+                        <button class="submit">Submit</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

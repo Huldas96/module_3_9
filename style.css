@@ -1,0 +1,245 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: 'Work Sans', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: rgb(255,193,33);
+    background: -moz-linear-gradient(125deg, rgba(255,193,33,1) 15%, rgba(255,116,23,1) 100%);
+    background: -webkit-linear-gradient(125deg, rgba(255,193,33,1) 15%, rgba(255,116,23,1) 100%);
+    background: linear-gradient(125deg, rgba(255,193,33,1) 15%, rgba(255,116,23,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffc121",endColorstr="#ff7417",GradientType=1);
+}
+
+.container {
+    width: 460px;
+    background: #ffffff;
+    border-radius: 4rem;
+    text-align: center;
+    padding: 3rem 2rem 1rem 2rem;
+}
+
+.container header {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 2.5rem;
+}
+
+.container .form-outer {
+    width: 100%;
+    overflow: hidden;
+}
+
+.form-outer form {
+    /*display: flex;*/
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 99rem;
+}
+
+.form-outer form .page {
+    /*width: 25%;*/
+}
+
+.slidePage {
+    transition: transform 0.3s ease-in-out;
+}
+
+.form-outer form .page .title {
+    text-align: left;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.form-outer form .page .field {
+    height: 3rem;
+    margin-top: 2.3rem;
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+
+.form-outer form .page .label {
+    margin-bottom: 0.4rem;
+    top: -1.4rem;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 500;
+    position: absolute;
+}
+
+.form-outer form .page .field input {
+    height: 100%;
+    width: 100%;
+    border: 0.15rem solid #8d8d8da2;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    padding-left: 0.8rem;
+    color: rgb(68, 68, 68);
+}
+
+form .page .field select {
+    width: 100%;
+    padding-left: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    border: 0.15rem solid #8d8d8da2;
+}
+
+.check-box {
+    filter: hue-rotate(40deg);
+    width: 1rem !important;
+    height: 1rem !important;
+    margin-top: -0.1rem;
+}
+
+.tof {
+    margin-right: 0.5rem;
+    text-align: left;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.checking {
+    display: flex;
+    position: relative !important;
+    flex-direction: row;
+    margin-top: -1rem !important;
+    height: 2rem;
+    padding-top: 1.5rem;
+}
+
+.form-outer form .page .field button {
+    width: 100%;
+    height: calc(100% + 0.1rem);
+    border: none;
+    background: rgba(255,116,23,1);
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    transition: 0.3s ease;
+}
+
+.form-outer form .page .field button:hover {
+    background: rgba(255,193,33,1);
+}
+
+.form-outer form .page:last-child .btns button {
+    margin-top: -2rem;
+}
+
+form .page .btns button.back {
+    margin-right: 0.2rem;
+}
+
+form .page .brns button.next {
+    margin-left: 0.2em;
+}
+
+.container .progress-bar {
+    display: flex;
+    margin: 2rem 0;
+}
+
+.container .progress-bar .step {
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+
+.progress-bar .step .bullet {
+    position: relative;
+    height: 1.5rem;
+    width: 1.5rem;
+    border: 2px solid rgba(255,116,23,1);
+    display: inline-block;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.progress-bar .step .bullet.active {
+    border-color: rgba(255,193,33,1);
+    background: rgba(255,193,33,1);
+}
+
+.progress-bar .step:last-child .bullet:before, 
+.progress-bar .step:last-child .bullet:after {
+    display: none;
+}
+
+.progress-bar .step .bullet:before, 
+.progress-bar .step .bullet:after {
+    position: absolute;
+    content: "";
+    bottom: 8px;
+    right: -60px;
+    height: 3px;
+    width: 44px;
+    background: rgba(255,116,23,1);
+}
+
+.progress-bar .step .bullet.active:after {
+    background: rgba(255,193,33,1);
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: animate 0.3s linear forwards;
+}
+
+@keyframes animate {
+    100%{
+        transform: scaleX(1);
+    }
+}
+
+.progress-bar .step p {
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgb(58, 58, 58);
+    margin-bottom: 1rem;
+}
+
+.progress-bar .step p.active {
+    color: rgb(155, 155, 155);
+}
+
+.progress-bar .step .bullet span {
+    font-weight: 500;
+    font-size: 1rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.progress-bar .step .bullet.active span {
+    display: none;
+}
+
+.container .progress-bar .step .check {
+    position: absolute;
+    top: 3rem;
+    left: 3.1rem;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.container .progress-bar .step .check.active {
+    display: block;
+}
+
+.container .progress-bar .step .check img {
+    height: 0.8rem;
+    width: 0.8rem;
+}
